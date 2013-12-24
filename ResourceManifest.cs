@@ -1,6 +1,6 @@
 using Orchard.UI.Resources;
 
-namespace Orchard.Ace {
+namespace Contrib.Ace {
     public class ResourceManifest : IResourceManifestProvider {
         public void BuildManifests(ResourceManifestBuilder builder) {
             var manifest = builder.Add();

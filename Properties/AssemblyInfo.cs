@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Security;
 
-[assembly: AssemblyTitle("Orchard.Ace")]
+[assembly: AssemblyTitle("Contrib.Ace")]
 [assembly: AssemblyDescription("The Ace Editor for Orchard")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Contrib.Ace")]
