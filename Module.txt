@@ -3,7 +3,7 @@ Path: Contrib.Ace
 AntiForgery: enabled
 Author: Fotis G. Pappas (fotisgpap)
 Website: http://www.grapto.com
-Version: 1.4.0
+Version: 1.4.0.1
 OrchardVersion: 1.7.2
 Description: The Ace module for Orchard enables HTML editing of Body items.
 FeatureDescription: A common location for Ace and related script libraries for Orchard Project.

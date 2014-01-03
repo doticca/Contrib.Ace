@@ -14,6 +14,6 @@ using System.Security;
 
 [assembly: Guid("112804E1-AC55-4181-94E6-01415362EEE3")]
 
-[assembly: AssemblyVersion("1.7.2.0")]
-[assembly: AssemblyFileVersion("1.7.2.0")]
+[assembly: AssemblyVersion("1.4.0.1")]
+[assembly: AssemblyFileVersion("1.4.0.1")]
 
