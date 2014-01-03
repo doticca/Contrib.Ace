@@ -10,8 +10,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Orchard.Ace</RootNamespace>
-    <AssemblyName>Orchard.Ace</AssemblyName>
+    <RootNamespace>Contrib.Ace</RootNamespace>
+    <AssemblyName>Contrib.Ace</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <FileUpgradeFlags>
@@ -52,18 +52,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\aspnetmvc\System.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Module.txt" />
@@ -349,6 +341,10 @@
     <ProjectReference Include="..\..\..\Orchard\Orchard.Framework.csproj">
       <Project>{2D1D92BB-4555-4CBE-8D0E-63563D6CE4C6}</Project>
       <Name>Orchard.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Orchard.Core.csproj">
+      <Project>{9916839c-39fc-4ceb-a5af-89ca7e87119f}</Project>
+      <Name>Orchard.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

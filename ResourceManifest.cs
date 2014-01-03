@@ -26,7 +26,7 @@ namespace Contrib.Ace {
                 .SetDependencies("Ace_Base", "Ace_Spellcheck", "Ace_Emmet", "Ace_Elt", "Ace_Whitespace", "Ace_Tabstops", "Emmet")
                 .SetVersion("28.10.13");
 
-            manifest.DefineScript("OrchardAce").SetUrl("orchard-ace.js").SetDependencies("Ace");
+            manifest.DefineScript("OrchardAce").SetUrl("orchard-ace.js", "orchard-ace.js").SetDependencies("Ace");
         }
     }
 }
