@@ -1,0 +1,10 @@
+﻿@using Contrib.Foundation.Models;
+@{
+    CssPart css = Model.ContentItem;
+}
+@if (css != null && !string.IsNullOrWhiteSpace(css.Css))
+{
+    <style scoped>
+@Html.Raw(css.Css)
+    </style>
+}
