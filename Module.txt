@@ -5,6 +5,6 @@ Author: Team Grapto (tweet: @teamgrapto)
 Website: https://github.com/grapto/Contrib.Ace
 Version: 1.4.0.3
 OrchardVersion: 1.7.2
-Description: The Ace module for Orchard enables HTML,Css and Javascript editing of Body items using the Ace Editor.
+Description: The Ace module for Orchard enables Html, Css and Javascript editing of Body items using the Ace Editor.
 Dependencies: Orchard.jQuery, js.Emmet
 Category: Input Editor
