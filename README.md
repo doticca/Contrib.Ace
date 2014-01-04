@@ -20,3 +20,10 @@ Quick Setup
 Enable the module and change the flavor of any Body Part you like to ace, tabbed and tabbedace instead of html.
 
 The module automatically adds Css and Javacript parts to Pages and Html Widgets.
+
+Dependencies: 
+=============
+- Orchard.jQuery, 
+- Emmet (http://gallery.orchardproject.net/List/Modules/Orchard.Module.js.Emmet/1.7.2.1)
+- Underscore (http://gallery.orchardproject.net/List/Modules/Orchard.Module.js.Underscore/1.5.2.1)
+
