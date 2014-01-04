@@ -1,0 +1,10 @@
+﻿@using Contrib.Ace.Models;
+@{
+    JsPart js = Model.ContentItem;
+}
+@if (js != null && !string.IsNullOrWhiteSpace(js.Js))
+{
+    <script type="text/javascript">
+@Html.Raw(js.Js)
+    </script>
+}

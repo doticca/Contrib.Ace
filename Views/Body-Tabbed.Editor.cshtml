@@ -1,0 +1,89 @@
+﻿@using Orchard.Environment.Descriptor.Models
+@{ 
+    var shellDescriptor = WorkContext.Resolve<ShellDescriptor>();
+    Script.Require("jQueryUI").AtHead();
+    Script.Require("OrchardAce").AtHead();
+    Style.Require("jQueryUI_Orchard").AtHead();
+    Script.Require("OrchardTinyMce");
+    Script.Require("jQueryColorBox");
+    Style.Require("jQueryColorBox");
+    var g = Guid.NewGuid();
+    string divid = "ace-" + g.ToString();
+    string txtid = "txt-" + g.ToString();
+}
+<script type="text/javascript">
+    var mediaPickerEnabled = @(shellDescriptor.Features.Any(x => x.Name == "Orchard.MediaPicker") ? "true" : "false");
+    var mediaLibraryEnabled = @(shellDescriptor.Features.Any(x => x.Name == "Orchard.MediaLibrary") ? "true" : "false");
+</script>
+@*<style scoped>
+    #@divid {
+        width: 100%;
+        min-height: 400px;
+        border: 1px solid #7C8891;
+    }
+</style>
+<div id="@divid"></div>*@
+
+<div id="bodytabs">
+    <ul>
+        <li><a href="#tabtiny">TinyMCE</a></li>
+        @*<li><a href="#tabhtml">Html</a></li>*@
+        <li><a href="#tabcss">Css</a></li>
+        <li><a href="#tabjs">Javascript</a></li>
+    </ul>
+    <div id="tabtiny">
+        @Html.TextArea("Text", (string)Model.Text, 25, 80,
+             new Dictionary<string, object> {
+		        {"class", "html " + txtid + " tinymce"},
+		        {"data-mediapicker-uploadpath",Model.AddMediaPath},
+		        {"data-mediapicker-title",T("Insert/Update Media")},
+                {"style", "width:100%"}
+	         })
+    </div>
+    @*<div id="tabhtml">
+    </div>*@
+    <div id="tabcss">
+    </div>
+    <div id="tabjs">
+    </div>
+</div>
+
+@*<script type="text/javascript">
+    $(function () {
+        var BodyAceEditor = ace.edit('@divid');
+        BodyAceEditor.setTheme('ace/theme/grapto');
+        BodyAceEditor.getSession().setMode('ace/mode/html');
+        BodyAceEditor.setOptions({
+            enableEmmet: true,
+            enableBasicAutocompletion: true,
+            enableSnippets: false,
+            spellcheck: true,
+            useElasticTabstops: true,
+            maxLines: Infinity
+        });
+        BodyAceEditor.setSelectionStyle("text");
+        BodyAceEditor.getSession().setUseSoftTabs(false);
+
+        var TextArea = $('.@txtid');//.hide();
+        BodyAceEditor.getSession().setValue(TextArea.val());
+        BodyAceEditor.getSession().on('change', function () {
+            TextArea.val(BodyAceEditor.getSession().getValue());
+        });
+    });
+
+</script>*@
+
+@using (Script.Foot())
+{
+<script type="text/javascript">
+    $(function () {
+
+        @*$("#@divid")
+        .appendTo("#tabhtml");*@
+
+        window.setTimeout(function () {
+            $("#bodytabs").tabs();
+        }, 100);
+    });
+</script>
+}

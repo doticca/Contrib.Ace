@@ -1,4 +1,8 @@
 ﻿<Placement>
+  <Place Parts_Css_Edit="Content:2"/>
+  <Place Parts_Js_Edit="Content:3"/>
+  <Match DisplayType="Detail">
     <Place Parts_Css="Content:4"/>
-    <Place Parts_Css_Edit="Content:2"/>
+    <Place Parts_Js="Content:6"/>
+  </Match>
 </Placement>

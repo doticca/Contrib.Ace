@@ -1,11 +1,10 @@
-﻿Name: Contrib.Ace
+﻿Name: Ace
 Path: Contrib.Ace
 AntiForgery: enabled
-Author: Fotis G. Pappas (fotisgpap), Nick Glezakos
+Author: Team Grapto (tweet: @teamgrapto)
 Website: https://github.com/grapto/Contrib.Ace
-Version: 1.4.0.2
+Version: 1.4.0.3
 OrchardVersion: 1.7.2
-Description: The Ace module for Orchard enables HTML,Css and Javascript editing of Body items.
-FeatureDescription: A common location for Ace and related script libraries for Orchard Project.
+Description: The Ace module for Orchard enables HTML,Css and Javascript editing of Body items using the Ace Editor.
 Dependencies: Orchard.jQuery, js.Emmet
 Category: Input Editor

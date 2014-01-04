@@ -5,30 +5,30 @@ using Orchard.Data.Migration;
 
 namespace Contrib.Ace
 {
-    public class CssMigrations : DataMigrationImpl
+    public class JsMigrations : DataMigrationImpl
     {
 
         public int Create()
         {
             SchemaBuilder.CreateTable(
-                "CssPartRecord",
+                "JsPartRecord",
                 table => table
                             .ContentPartRecord()
-                            .Column<string>("Css", column => column.Unlimited())
+                            .Column<string>("Js", column => column.Unlimited())
                             );
 
-            ContentDefinitionManager.AlterPartDefinition("CssPart", builder => builder
+            ContentDefinitionManager.AlterPartDefinition("JsPart", builder => builder
                 .Attachable()
-                .WithDescription("Allows the inline editing of Css using Ace editor."));
+                .WithDescription("Allows the inline editing of Javascript using Ace editor."));
 
             ContentDefinitionManager.AlterTypeDefinition("HtmlWidget", 
                 cfg => cfg
-                    .WithPart("CssPart")
+                    .WithPart("JsPart")
                 );
 
             ContentDefinitionManager.AlterTypeDefinition("Page", 
                 cfg => cfg
-                    .WithPart("CssPart")
+                    .WithPart("JsPart")
                 );
 
             return 1;

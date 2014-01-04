@@ -336,10 +336,15 @@
     <Content Include="Scripts\orchard-ace.js" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Drivers\JsPartDriver.cs" />
+    <Compile Include="JsMigrations.cs" />
     <Compile Include="CssMigrations.cs" />
     <Compile Include="Drivers\CssPartDriver.cs" />
+    <Compile Include="Handlers\JsPartHandler.cs" />
     <Compile Include="Handlers\CssPartHandler.cs" />
+    <Compile Include="Models\JsPart.cs" />
     <Compile Include="Models\CssPart.cs" />
+    <Compile Include="Models\JsPartRecord.cs" />
     <Compile Include="Models\CssPartRecord.cs" />
     <Compile Include="ResourceManifest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -377,6 +382,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Parts.Css.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Parts.Js.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\EditorTemplates\Parts\Js.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Body-Tabbed.Editor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LICENSE" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.md" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
