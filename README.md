@@ -9,9 +9,9 @@ The Css part enables Css snippets for any content. The module automatically atta
 The Js part enables Javascript snippets for any content. The module automatically attaches Js parts to Pages and Html Widgets.
 
 The Ace module introduces various flavors of Body editing:<br>
-ace: the body editor will switch to Ace editor for advanced HTML editing. Enable this flavor if you prefer editing with pure Html and you don't like TinyMCE's auto formatting.<br>
-tabbedace: the body editor will combine Html, Css and Javascript pars into a Tabbed interface. Editor is Ace for all parts.<br>
-tabbed: the body editor will combine Html, Css and Javascript pars into a Tabbed interface. Editor is TinyMCE for Html and Ace for Css and Javascript.
+- ace: the body editor will switch to Ace editor for advanced HTML editing. Enable this flavor if you prefer editing with pure Html and you don't like TinyMCE's auto formatting.<br>
+- tabbedace: the body editor will combine Html, Css and Javascript pars into a Tabbed interface. Editor is Ace for all parts.<br>
+- tabbed: the body editor will combine Html, Css and Javascript pars into a Tabbed interface. Editor is TinyMCE for Html and Ace for Css and Javascript.
 
 Quick Setup
 ===========
