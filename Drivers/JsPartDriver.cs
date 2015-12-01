@@ -16,7 +16,7 @@ namespace Contrib.Ace.Drivers
         protected override DriverResult Display(JsPart part, string displayType, dynamic shapeHelper)
         {
             return ContentShape("Parts_Js",
-                () => shapeHelper.Parts_Js(ContentItem: part));
+                () => shapeHelper.Parts_Js(Js: part));
         }
 
         protected override DriverResult Editor(JsPart part, dynamic shapeHelper)

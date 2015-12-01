@@ -1,10 +1,14 @@
 ﻿@using Contrib.Ace.Models;
 @{
-    CssPart css = Model.ContentItem;
+    CssPart css = null;
+    try{
+        css = Model.Css;
+    }
+    catch {}
 }
 @if (css != null && !string.IsNullOrWhiteSpace(css.Css))
 {
-    <style scoped>
+    <style>
 @Html.Raw(css.Css)
     </style>
 }

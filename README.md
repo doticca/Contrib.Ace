@@ -23,7 +23,7 @@ The module automatically adds Css and Javacript parts to Pages and Html Widgets.
 
 Dependencies: 
 =============
-- Orchard.jQuery, 
-- Emmet (http://gallery.orchardproject.net/List/Modules/Orchard.Module.js.Emmet/1.7.2.1)
-- Underscore (http://gallery.orchardproject.net/List/Modules/Orchard.Module.js.Underscore/1.5.2.1)
+- Orchard.jQuery (build in), 
+- Emmet (https://github.com/grapto/js.Emmet)
+- Underscore (https://github.com/grapto/js.Underscore)
 
