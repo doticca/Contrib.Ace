@@ -1,42 +1,52 @@
 ﻿@using Orchard.Environment.Descriptor.Models
 @{ 
-    Script.Require("jQueryUI").AtHead();
+    //Script.Require("jQueryUI").AtHead();
     Script.Require("OrchardAce").AtHead();
-    Style.Require("jQueryUI_Orchard").AtHead();
+    //Style.Require("jQueryUI_Orchard").AtHead();
     var g = Guid.NewGuid();
     string divid = "ace-" + g.ToString();
     string txtid = "txt-" + g.ToString();
 }
 <style>
     #@divid {
-        width: 100%;
-        min-height: 400px;
         border: 1px solid #7C8891;
+        min-height:400px;
+        width:99%;
+    }
+    .edit-item{
+        display:none;
+    }
+    .tabs-content, #tabhtml, #tabcss, #tabjs{
+        position: relative;
     }
 </style>
-<div id="@divid"></div>
+
 @Html.TextArea("Text", (string)Model.Text, 25, 80,
-	 new Dictionary<string,object> {
-		{"class", "html aceeditor " + txtid},
+     new Dictionary<string, object> {
+        {"class", "html aceeditor " + txtid},
         {"style", "width:100%; display:none;"}
-	 })
+     })
 
-<div id="bodytabs">
-    <ul>
-        <li><a href="#tabhtml">Html</a></li>
-        <li><a href="#tabcss">Css</a></li>
-        <li><a href="#tabjs">Javascript</a></li>
+    <ul id="bodytabs" class="tabs" data-tab>
+        <li class="tab-title active first"><a href="#tabhtml">Html</a></li>
+        <li class="tab-title"><a href="#tabcss">Css</a></li>
+        <li class="tab-title last"><a href="#tabjs">Javascript</a></li>
     </ul>
-    <div id="tabhtml">
+    <div class="tabs-content">
+        <div class="content active" id="tabhtml">
+            <div id="@divid"></div>
+        </div>
+        <div class="content" id="tabcss">
+        </div>
+        <div class="content" id="tabjs">
+        </div>
     </div>
-    <div id="tabcss">
-    </div>
-    <div id="tabjs">
-    </div>
-</div>
 
+@using (Script.Foot())
+{
 <script type="text/javascript">
     $(function () {
+
         var BodyAceEditor = ace.edit('@divid');
         BodyAceEditor.setTheme('ace/theme/grapto');
         BodyAceEditor.getSession().setMode('ace/mode/html');
@@ -56,23 +66,13 @@
         BodyAceEditor.getSession().on('change', function () {
             TextArea.val(BodyAceEditor.getSession().getValue());
         });
-    });
-</script>
 
-@using (Script.Foot())
-{
-<script type="text/javascript">
-    $(function () {
-        $("#@divid")
-        .appendTo("#tabhtml");
-        window.setTimeout(function () {
-            $("#bodytabs").tabs();
-            $("#bodytabs").show();
-        }, 100);
+        $('#tabhtml').on('toggled', function (event, tab) {
+            BodyAceEditor.resize();
+        });
+        $('#bodytabs').parent().find('label').hide();
+        $('.edit-item').show();
+        //$('#tabhtml').css('height', 400);
     });
-    //$(window).load(function () {
-    //    $("#bodytabs").tabs();
-    //    $("#bodytabs").show();
-    //});
 </script>
 }

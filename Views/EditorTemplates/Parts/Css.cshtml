@@ -7,9 +7,10 @@
 }
 <style>
     #@divid {
-        width: 100%;
-        min-height: 400px;
         border: 1px solid #7C8891;
+        position:relative;
+    min-height:400px;
+        width:99%;
     }
 </style>
 <fieldset>
@@ -21,6 +22,9 @@
         {"style", "width:100%; display:none;"}
 	 })
 </fieldset>
+
+@using (Script.Foot())
+{
 <script type="text/javascript">
     $(function () {
         var CssAceEditor = ace.edit('@divid');
@@ -42,18 +46,14 @@
         CssAceEditor.getSession().on('change', function () {
             CssTextArea.val(CssAceEditor.getSession().getValue());
         });
-    });
 
-</script>
-
-@using (Script.Foot())
-{
-<script type="text/javascript">
-    $(function () {
         var desttab = $("#tabcss");
         if (typeof (desttab) !== 'undefined' && desttab.length > 0) {
             $("#@divid").appendTo("#tabcss");
-            $("#csslabel").hide();
+            $("#csslabel").parent().hide();
+            $('#tabcss').on('toggled', function (event, tab) {
+                CssAceEditor.resize();
+            });
         }
     });
 </script>
